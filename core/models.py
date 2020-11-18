@@ -5,4 +5,7 @@ class Client(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)
     age = models.IntegerField()
     sex = models.CharField(max_length=10)
-    creation = models.DateTimeField(auto_now=True)
+    #creation = models.DateTimeField(auto_now=False)
+
+    def __str__(self):
+        return self.name

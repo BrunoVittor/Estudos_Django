@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,14 +7,21 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>List in Django</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
 </head>
 <body>
-    {% block content %}
-        {% for client in clients %}
-            {{ client.name }}
-        {% endfor %}
-    {% endblock %}
-    <h1>Teste</h1>
+<h1 class="home">teste de template</h1>
+<p>Css não funciona</p>
+<ul>
+    {% for client in clients %}
+    <li><b>
+        {{ client.name }}
+        {{ client.age }}
+        {{ client.sex }}
+        {{ client.creation }}
+    </b></li>
+    {% endfor %}
+</ul>
 </body>
 </html>
