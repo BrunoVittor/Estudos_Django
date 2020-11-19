@@ -16,12 +16,15 @@
 <ul>
     {% for client in clients %}
     <li><b>
-        {{ client.name }}
+        <a href="{% url 'person_update' client.id %}">{{ client.name }}</a> <!-- o cliente.id vem desse campo da view < client = get_object_or_404(Client, pk=id) > -->
+        <a href="{% url 'person_delete' client.id %}">Delete</a> <!-- o cliente.id vem desse campo da view < client = get_object_or_404(Client, pk=id) > -->
         {{ client.age }}
         {{ client.sex }}
         {{ client.creation }}
     </b></li>
     {% endfor %}
 </ul>
+<br>
+<a href="{% url 'person_new' %}">Novo cliente</a>
 </body>
 </html>

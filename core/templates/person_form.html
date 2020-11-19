@@ -8,9 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-<form method="POST">
+<form method="POST"> <!-- método para realiza alteração no conteúdo do form -->
     {% csrf_token %}
-    {{ form }}
+    {{ form }} <!-- aqui é onde chamamos o form na página -->
     <button type="submit">Save</button>
 </form>
 </body>
