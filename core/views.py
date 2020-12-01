@@ -12,12 +12,11 @@ def person_list(request):
     return render(request, 'list.html', context)
 
 
-@login_required
 def person_new(request):
     form = PersonForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('list.html')
+        return redirect('person_list')
     return render(request, 'person_form.html', {'form': form})
 
 
